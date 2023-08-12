@@ -4,6 +4,7 @@ from CoreLib.readFileClass import Readfile
 from CoreLib.visualClass import Visual
 
 
+# Stream类：搭建Web端交互界面的程序
 class StreamGUI:
 
     # 初始化函数
@@ -23,7 +24,7 @@ class StreamGUI:
         st.markdown('##### 1.1. 编辑并上传模板表格')
         tableFile = st.file_uploader("点击下载模板表格并填写上传：[template.xlsx](https://pan.baidu.com/s/1E73EST3i5VXj6ZhZs_SNBA?pwd=s543)",
                                 type=['xls','xlsx'], accept_multiple_files=False)
-        st.markdown(':pushpin: **填写方法及注意事项**详见项目源代码主页 (点击右上Github图标访问)')
+        st.markdown(':pushpin: **填写方法及注意事项**详见项目源代码主页 (点击[这里](https://github.com/kfs196/AvaLink-Python))')
         
 
         if tableFile is not None:
