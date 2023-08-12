@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 from CoreLib.structureClass import Structure
 from CoreLib.nodeClass import Node
 from CoreLib.beamClass import Beam
@@ -12,7 +13,8 @@ class Visual:
     # 初始化函数
     def __init__(self,elemDict:dict) -> None:
 
-        self.elemDict = elemDict # 获取含有求解结果的单元字典
+        self.elemDict = elemDict # 获取含有求解结果的单元字典    
+
         plt.rcParams['font.sans-serif'] = ['SimHei'] # 修改默认字体
 
     
@@ -132,9 +134,9 @@ class Visual:
                           yVector+amp*item.dGlobalMat[1],
                           linestyle='-', color='teal', linewidth=1.2)
             
-        axe.set_xlabel("长度单位：m",fontsize=12) # 设置基本标注
-        axe.set_ylabel("长度单位：m",fontsize=12)
-        axe.set_title("变形示意图",fontsize=14)
+        axe.set_xlabel("Unit of lengt：m",fontsize=12) # 设置基本标注
+        axe.set_ylabel("Unit of lengt：m",fontsize=12)
+        axe.set_title("Deformation Diagram",fontsize=14)
 
         # 第五步：添加注释性标记 -> 结点名称标记
         meanLength = np.mean(elemLen)
@@ -185,9 +187,9 @@ class Visual:
             nodeText.update({item.Pj.name : (item.Pj.x,item.Pj.y)}) # 由于键的唯一性，能自动去重
             elemLen.append(item.length) # 获取杆件长度集合：辅助标注
 
-        axe.set_xlabel("长度单位：m",fontsize=12)
-        axe.set_ylabel("长度单位：m",fontsize=12)
-        axe.set_title("弯矩示意图",fontsize=14)
+        axe.set_xlabel("Unit of lengt：m",fontsize=12)
+        axe.set_ylabel("Unit of lengt：m",fontsize=12)
+        axe.set_title("Bending Moment Diagram",fontsize=14)
 
         # 添加注释性标记 -> 结点名称标记
         meanLength = np.mean(elemLen)
@@ -238,9 +240,9 @@ class Visual:
             nodeText.update({item.Pj.name : (item.Pj.x,item.Pj.y)}) # 由于键的唯一性，能自动去重
             elemLen.append(item.length) # 获取杆件长度集合：辅助标注
 
-        axe.set_xlabel("长度单位：m",fontsize=12)
-        axe.set_ylabel("长度单位：m",fontsize=12)
-        axe.set_title("剪力示意图",fontsize=14)
+        axe.set_xlabel("Unit of lengt：m",fontsize=12)
+        axe.set_ylabel("Unit of lengt：m",fontsize=12)
+        axe.set_title("Shear Force Diagram",fontsize=14)
 
         # 添加注释性标记 -> 结点名称标记
         meanLength = np.mean(elemLen)

@@ -17,12 +17,14 @@ class StreamGUI:
 
         st.title('AvaLink Streamlit Demo')
         st.markdown('这是一个利用Streamlit运行的Web小程序，用于求解简单的结构力学问题 (AvaLink-Python)')
-        st.markdown('作者邮箱 :mailbox_closed: ：kfs196@126.com')
+        st.markdown(':mailbox_closed:作者邮箱： kfs196@126.com')
         st.divider()
         st.markdown('#### :star: 前处理部分：')
         st.markdown('##### 1.1. 编辑并上传模板表格')
-        tableFile = st.file_uploader("请选择该表格文件上传，否则将无法完成计算：template.xlsx",
+        tableFile = st.file_uploader("点击下载模板表格并填写上传：[template.xlsx](https://pan.baidu.com/s/1E73EST3i5VXj6ZhZs_SNBA?pwd=s543)",
                                 type=['xls','xlsx'], accept_multiple_files=False)
+        st.markdown(':pushpin: **填写方法及注意事项**详见项目源代码主页 (点击右上Github图标访问)')
+        
 
         if tableFile is not None:
 
